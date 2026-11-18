@@ -1,4 +1,5 @@
 IT23044 Md Tanjil Islam Opu
+https://jupyter.org/try-jupyter/lab/
 
 # Number Theory for Cryptography
 
@@ -122,6 +123,4 @@ Topics suitable for programming practice:
 - Euler's Totient Function
 - Lucas-Lehmer Primality Test
 
----
 
-**Reference:** Day 2 – Prime Numbers (Maths and Physics Club, IIT Bombay).
