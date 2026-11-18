@@ -1,126 +1,95 @@
 IT23044 Md Tanjil Islam Opu
 https://jupyter.org/try-jupyter/lab/
+# Number Theory & Cryptography Foundations
 
-# Number Theory for Cryptography
-
-This repository contains Python implementations and basic explanations of important Number Theory concepts used in Cryptography.
-
-## Topics Covered
-
-### 1. Greatest Common Divisor (GCD)
-GCD is the largest positive integer that divides two or more numbers without leaving a remainder. Euclid's Algorithm is used to calculate GCD efficiently.
-
-### 2. Least Common Multiple (LCM)
-LCM is the smallest positive integer that is exactly divisible by two or more numbers. It can be calculated using the GCD formula.
-
-### 3. Modular Inverse
-The modular inverse of a number `a` modulo `m` is a number `x` such that `(a * x) % m = 1`. It is an important operation in RSA encryption.
-
-### 4. Sieve of Eratosthenes
-An efficient algorithm for finding all prime numbers up to a given limit by eliminating multiples of prime numbers.
-
-### 5. Prime Factorization
-Prime factorization is the process of expressing a number as a product of its prime factors. It is an important concept in RSA cryptography.
-# Day 2: Prime Numbers
-
-## 📚 Topics Covered
-
-### 1. Prime Numbers
-A prime number is a natural number greater than 1 that has exactly two divisors: 1 and itself.
-
-### 2. Distribution of Prime Numbers
-Explores how prime numbers are distributed among natural numbers and different mathematical proofs showing that infinitely many primes exist.
-
-### 3. Infinitude of Primes
-Studies different proofs that there are infinitely many prime numbers, including Euclid's proof, Fermat numbers, and Filip Saidak's proof.
-
-### 4. Dirichlet's Theorem
-States that an arithmetic sequence `ak + b` contains infinitely many primes if `gcd(a, b) = 1`.
-
-### 5. Prime Number Theorem
-Explains the approximate distribution of prime numbers. The number of primes up to `x` is approximately `x / log(x)`.
-
-### 6. Prime Number Conjectures
-Introduces important unsolved mathematical problems, including the Goldbach Conjecture and Waring's Prime Number Conjecture.
-
-### 7. Prime Number Generating
-Explores mathematical expressions and polynomials that generate prime numbers, such as `n² + n + 41`.
-
-### 8. Primality Testing
-Introduces techniques for determining whether a given number is prime or composite.
-
-### 9. Sieve of Eratosthenes
-An efficient algorithm for finding all prime numbers up to a given limit by repeatedly eliminating multiples of prime numbers.
-
-### 10. Trial Division
-A basic primality-testing technique that checks whether a number is divisible by integers up to its square root.
-
-### 11. Wheel Factorization
-An optimization technique that reduces unnecessary divisibility checks by skipping numbers divisible by small primes.
-
-### 12. Pseudoprimes
-Composite numbers that satisfy certain mathematical properties of prime numbers, making them difficult to identify using simple tests.
-
-### 13. Fermat's Primality Test
-Uses Fermat's Little Theorem to determine whether a number is probably prime or composite.
-
-### 14. Carmichael Numbers
-Special composite numbers that satisfy Fermat's Little Theorem for every integer base, making them difficult cases for Fermat's primality test.
-
-### 15. Euler's Totient Function
-A number-theoretic function `φ(n)` that counts the positive integers up to `n` that are relatively prime to `n`.
-
-### 16. Modular Arithmetic and Primitive Roots
-Studies arithmetic under a modulus, including modular inverses, generators, multiplicative order, periodicity, and primitive roots.
-
-### 17. Lucas's Theorem
-Introduces a primality-testing method based on modular exponentiation and the prime factors of `n - 1`.
-
-### 18. The n-1 Test
-A primality-testing technique that uses partial factorization of `n - 1` to prove whether a number is prime.
-
-### 19. Lucas-Lehmer Test
-A specialized primality test used to determine whether certain Mersenne numbers are prime.
-
-### 20. Mersenne Primes
-Prime numbers of the form `2^n - 1`. They are important in the study of large prime numbers and perfect numbers.
-
-### 21. Perfect Numbers
-A positive integer equal to the sum of all its positive divisors except itself. Examples: 6, 28, 496, and 8128.
-
-### 22. Antiprimes (Highly Composite Numbers)
-Numbers that have more divisors than any smaller positive integer.
-
-### 23. Fundamental Theorem of Arithmetic
-States that every integer greater than 1 can be expressed uniquely as a product of prime numbers, apart from the order of factors.
-
-### 24. Applications of Prime Numbers in Cryptography
-Explains how prime numbers are used in cryptographic systems. Multiplying two large primes is easy, but factoring their product is computationally difficult.
-
-### 25. Algebraic Number Theory and Ring Theory
-Introduces advanced mathematical structures involving integers, prime elements, irreducible elements, and polynomial rings.
+This repository contains lecture slides, notes, and Python implementations covering the mathematical foundations of Number Theory and Public-Key Cryptography.
 
 ---
 
-## 🎯 Learning Objectives
+## 📚 Course Topics Breakdown
 
-- Understand prime numbers and their mathematical properties.
-- Learn different algorithms for generating prime numbers.
-- Implement primality-testing techniques.
-- Understand modular arithmetic and number-theoretic functions.
-- Explore important prime number theorems and conjectures.
-- Understand the role of prime numbers in modern cryptography.
+### 📅 Day 0: Foundations of Integers & Modular Arithmetic
+* **Number Systems & Inverse Operations**
+  * Natural numbers, integers, and rational numbers
+  * Limitations of subtraction and division in basic sets
+  * Role of Number Theory in high-speed computing and cryptography
+* **Divisibility**
+  * Formal definition of divisibility ($b \mid a$)
+  * Linear combinations and divisibility properties ($c \mid a \text{ and } c \mid b \implies c \mid (a \pm b)$)
+* **Division with Remainders**
+  * Quotient ($q$) and remainder ($r$) theorem ($a = q \times b + r$, $0 \le r < b$)
+  * Connection between remainders and divisibility
+* **Modular Arithmetic**
+  * Congruence relations ($a \equiv b \pmod m$)
+  * Preservation of congruence under addition and multiplication
+  * Applications: Finding last digits of large powers (e.g., $99^{99} \bmod 100$) and divisibility rules (divisibility by 3)
+* **Operations on Remainders**
+  * Modular addition and multiplication tables (e.g., modulo 6 vs. modulo 7)
+  * Modular subtraction and introduction to modular division
 
-## 🛠️ Practical Implementation
+---
 
-Topics suitable for programming practice:
-- Prime Number Checking
-- Sieve of Eratosthenes
-- Prime Factorization
-- GCD and LCM
-- Modular Exponentiation
-- Fermat Primality Test
-- Euler's Totient Function
-- Lucas-Lehmer Primality Test
+### 📅 Day 1: Euclidean Algorithms, Diophantine Equations & Theorems
+* **Greatest Common Divisor (GCD)**
+  * Definition, properties, and real-world applications (fraction reduction, modular inverses)
+  * Naive algorithm and time complexity analysis ($O(\min(a,b))$)
+* **Euclid’s Algorithm**
+  * Euclid's Lemma ($\gcd(a, b) = \gcd(b, a \bmod b)$)
+  * Iterative and recursive implementations
+  * Logarithmic runtime analysis ($O(\log a + \log b)$)
+* **Extended Euclid’s Algorithm**
+  * Bézout's identity ($ax + by = \gcd(a, b)$) as a certificate of optimality
+  * Recursive derivation and coefficient calculation
+* **Least Common Multiple (LCM)**
+  * Definition and naive computation
+  * Efficient calculation via GCD: $\text{lcm}(a, b) = \frac{a \cdot b}{\gcd(a, b)}$
+* **Linear Diophantine Equations**
+  * Existence condition: $ax + by = c$ has integer solutions iff $\gcd(a, b) \mid c$
+  * Finding a particular solution $(x_0, y_0)$ using Extended Euclid's Algorithm
+  * Generating all general integer solutions: $x = x_0 + t\frac{b}{d}, \quad y = y_0 - t\frac{a}{d}$
+* **Modular Division & Multiplicative Inverses**
+  * Existence and uniqueness of modular inverses ($\gcd(a, n) = 1$)
+  * Computing $b / a \pmod n$ via Extended Euclid's Algorithm
+* **Cryptography Overview**
+  * Symmetric vs. Public-Key Cryptography (Alice, Bob, and Mallory/Eve)
+  * Key exchange and RSA encryption motivation
+* **Chinese Remainder Theorem (CRT)**
+  * Dependent vs. independent remainders ($\gcd(a, b) = 1$)
+  * Constructive proof and algorithm for solving systems of congruences
+  * Extension to multiple pairwise coprime moduli and large-integer arithmetic
+* **Modular Exponentiation & Euler's Theorem**
+  * Fast Modular Exponentiation (Binary Exponentiation / Exponentiation by Squaring in $O(\log e)$)
+  * **Fermat’s Little Theorem:** $a^{p-1} \equiv 1 \pmod p$ for prime $p \nmid a$
+  * **Euler’s Totient Function ($\phi(n)$):** Counting coprime integers, formulas for $\phi(p)$ and $\phi(pq)$
+  * **Euler’s Theorem:** Generalization $a^{\phi(n)} \equiv 1 \pmod n$ for $\gcd(a, n) = 1$
 
+---
 
+### 📅 Day 2: Prime Numbers & Primality Testing
+* **Introduction & Distribution of Primes**
+  * Fundamental definitions and the Fundamental Theorem of Arithmetic
+  * Proofs of the infinitude of primes (Euclid's proof, $n!+1$, divergence of Harmonic series, Goldbach's Fermat numbers proof, Filip Saidak's proof)
+  * Dirichlet's Theorem on arithmetic progressions ($ak + b$)
+  * The Prime Number Theorem ($\pi(x) \sim \frac{x}{\ln x}$)
+* **Famous Conjectures & Patterns**
+  * Goldbach's Conjecture and Waring's Prime Number Conjecture
+  * Twin Prime Conjecture, Chebyshev's bias, and Prime Spirals
+  * Prime-generating polynomials (e.g., Euler's $n^2 + n + 41$)
+* **Primality Testing & Pseudoprimes**
+  * Sieve of Eratosthenes and Wheel Factorization (Wheel of 30)
+  * Fermat Primality Test and Fermat Pseudoprimes
+  * **Carmichael Numbers:** Composite numbers passing Fermat's test for all bases (e.g., 561, 1105, 1729)
+* **Advanced Theorems & Special Primes**
+  * Primitive roots, order, and periodicity modulo $p$
+  * Lucas's Theorem, the $n-1$ test, and the Lucas-Lehmer test
+  * **Mersenne Primes** ($2^n - 1$) and their connection to **Perfect Numbers**
+  * **Antiprimes (Highly Composite Numbers):** Divisor function $d(n) = \prod(a_i + 1)$ and Ramanujan's properties
+
+---
+
+## 🛠️ Files in this Repository
+* `Day 0.pdf` — Lecture slides on Divisibility and Basic Modular Arithmetic
+* `Day 1.pdf` — Lecture slides on GCD, Diophantine Equations, CRT, and Euler's Theorem
+* `Day 2.pdf` — Lecture slides on Prime Numbers, Conjectures, and Primality Testing
+* `number_theory_lab.ipynb` — Jupyter Notebook containing executable Python implementations
+```[cite: 1, 309, 466]
